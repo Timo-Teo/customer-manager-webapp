@@ -1,0 +1,41 @@
+<div>
+  <h4>Editar articulo</h4>
+
+  <div>
+    <form [formGroup]="formItem" class="form-container">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          formControlName="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input
+          matInput
+          formControlName="price"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Stock</mat-label>
+        <input
+          matInput
+          formControlName="stock"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Código único</mat-label>
+        <input
+          matInput
+          formControlName="uniqueCode"
+        />
+      </mat-form-field>
+
+      <button  mat-raised-button type="submit" class="btn btn-primary" (click)="onUpdate()">Actualizar</button>
+    </form>
+  </div>
+
+</div>

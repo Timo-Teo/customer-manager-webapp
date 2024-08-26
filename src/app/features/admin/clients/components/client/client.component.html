@@ -1,0 +1,25 @@
+<div>
+  <h4>Crear cliente</h4>
+
+  <div>
+    <form [formGroup]="formClient" class="form-container">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          formControlName="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input
+          matInput
+          formControlName="lastname"
+        />
+      </mat-form-field>
+
+      <button  mat-raised-button type="submit" class="btn btn-primary" (click)="onSubmit()">Crear</button>
+    </form>
+  </div>
+
+</div>

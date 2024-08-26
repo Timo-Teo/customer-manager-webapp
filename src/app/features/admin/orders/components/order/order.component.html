@@ -1,0 +1,36 @@
+<div>
+  <h4>Crear orden</h4>
+
+  <div>
+    <form [formGroup]="formOrder" (ngSubmit)="onCreate()">
+      <mat-form-field>
+        <mat-label>Client</mat-label>
+        <mat-select formControlName="clientId">
+          <mat-option *ngFor="let client of clients" [value]="client.id">{{ client.name }} {{ client.lastname }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div formArrayName="items">
+        <div *ngFor="let item of itemsArray.controls; let i = index" [formGroupName]="i">
+          <mat-checkbox
+            formControlName="selected" (change)="onCheckboxChange(i)">
+            {{ items[i].name }}
+          </mat-checkbox>
+          <span>
+            **Price: {{ items[i].price }}**
+          </span>
+          <span>
+            ++Stock: {{ items[i].stock }}++
+          </span>
+          <mat-form-field>
+            <input matInput formControlName="quantity" type="number" min="0" [readonly]="!itemsArray.at(i).get('selected')?.value">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="formOrder.invalid">Create Order</button>
+    </form>
+
+  </div>
+
+</div>
