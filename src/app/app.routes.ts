@@ -10,12 +10,22 @@ import { ItemComponent } from "./features/admin/items/components/item/item.compo
 import { OrdersComponent } from "./features/admin/orders/components/orders/orders.component";
 import { OrderComponent } from "./features/admin/orders/components/order/order.component";
 import { UpdateOrderComponent } from "./features/admin/orders/components/update-order/update-order.component";
+import { AdminHomeComponent } from "./features/admin/pages/admin-home/admin-home.component";
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'admin',
+    pathMatch: 'full'
+  },
   {
     path: 'admin',
     component: MainLayoutComponent,
     children: [
+      {
+        path: '',
+        component: AdminHomeComponent
+      },
       {
         path: 'clients',
         component: ClientsComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from "../../services/items.service";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Item } from "../../models/item.model";
 import { MatButton } from "@angular/material/button";
 import {
@@ -26,7 +26,8 @@ import {
     MatRow,
     MatRowDef,
     MatTable,
-    MatHeaderCellDef
+    MatHeaderCellDef,
+    RouterLink
   ],
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss'

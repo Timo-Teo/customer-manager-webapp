@@ -11,7 +11,7 @@ import {
   MatTable
 } from "@angular/material/table";
 import { MatButton } from "@angular/material/button";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-clients',
@@ -27,7 +27,8 @@ import { Router } from "@angular/router";
     MatCellDef,
     MatHeaderRowDef,
     MatRowDef,
-    MatButton
+    MatButton,
+    RouterLink
   ],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'

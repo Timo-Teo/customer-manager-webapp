@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from "../../models/order.model";
 import { OrdersService } from "../../services/orders.service";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { MatButton } from "@angular/material/button";
 import {
   MatCell,
@@ -29,7 +29,8 @@ import { switchMap } from "rxjs";
     MatRowDef,
     MatTable,
     MatHeaderCellDef,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.scss'
